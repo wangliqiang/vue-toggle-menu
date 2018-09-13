@@ -128,6 +128,11 @@ export default {
             }
         },
         clickMenu(item, index) {
+            this.menuItems.forEach((item) => {
+                let el = document.getElementById(item.name);
+                el.style.background = this.menuBg;
+            })
+            document.getElementById(item.name).style.background = 'blue';
             this.$emit('clickMenu', item.name, index);
         }
     }
