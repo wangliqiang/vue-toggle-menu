@@ -112,7 +112,8 @@ export default {
             this.openFlag = !this.openFlag;
         },
         toggleMenuTransition(name, index, revert) {
-            let oneArea = 90 / (this.menuItems.length - 1);
+            let oneArea = 90 / (this.menuItems.length - 1); // 每一块所占的角度
+            // 弧度的计算公式为： 2*PI/360*角度；
             let axisX = Math.sin((this.menuItems.length - 1 - index) * oneArea * 2 * Math.PI / 360);
             let axisY = Math.cos((this.menuItems.length - 1 - index) * oneArea * 2 * Math.PI / 360);
             let el = document.getElementById(name);
